@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo uso de imagenes</title>
+</head>
+<body>
+    <main>
+        <article>
+            <h2>Ejemplo de img </h2>
+            <img src="Recursos/tam_1.jpg" width="150px" alt="imagen de un bioma de tamaulipas">
+        </article>
+        <section>
+            <h2>Ejemplo de figure</h2>
+            <figure>
+                <img src="Recursos/tam_2.jpg" width="170px" alt="Bioma Tamaulipas 2">
+                <figcaption>
+                    Descripcion de mi imagen de figura.
+                </figcaption>
+            </figure>
+        </section>
+        <div>
+            <h2>Ejemplo de picture</h2>
+            <picture>
+                <source srcset="Recursos/tam_4.jpg"
+                media="(min-width:1920px)" type="image/jpg" width="200px"/>
+                <source srcset="Recursos/tam_5.jpg"
+                media="(min-width:1200px)" type="image/jpg" width="200px"/>
+                <source srcset="Recursos/tam_6.jpg"
+                media="(min-width:800px)" type="image/jpg" width="200px"/>
+                <img src="Recursos/tam_3.jpg" width="200px"/>
+            </picture>
+        </div>
+    </main>
+</body>
+</html>

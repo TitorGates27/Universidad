@@ -1,0 +1,78 @@
+html {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: aliceblue;
+    background-color: black;
+    font-size: small;
+
+    p {
+        font-size: 32px;
+    }
+    pre {
+        font-size: 32px;
+    }
+}
+
+.caja {
+    height: 100px;
+    width: 100px;
+    background-color: blueviolet;
+}
+
+img {
+    height: 130px;
+    width: 100px;
+    margin-bottom: 100px;
+    border-radius: 10px;
+    transition: all 2s;
+}
+
+.contenedor {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.fila {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+#a {
+    background-color: slategrey
+}
+
+#b {
+    background-color: royalblue
+}
+
+#c {
+    background-color: darkblue
+}
+
+#d {
+    background-color: purple
+}
+
+.a:hover {
+    transform: scale(10) rotate(3666deg) ;
+}
+
+.a2:hover {
+    transform: rotate(360deg);
+}
+
+.b:hover {
+    transform: rotate(36099deg);
+}
+
+.c:hover {
+    transform: skew(18660deg);
+}
+
+.d:hover {
+    transform: translate(500px);
+}

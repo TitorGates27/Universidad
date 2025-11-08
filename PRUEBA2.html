@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Widget YouTube</title>
+    <style>
+        /* Estilos del widget */
+        .widget {
+            font-family: Arial, sans-serif;
+            border: 2px solid #ccc;
+            padding: 10px;
+            width: 300px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+        }
+
+        .widget img {
+            width: 60px;
+            height: 60px;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        .widget .info {
+            overflow: hidden;
+        }
+
+        .widget .title {
+            font-size: 16px;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .widget .channel {
+            font-size: 14px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="widget" id="youtube-widget">
+        <img src="" alt="Miniatura" id="thumbnail">
+        <div class="info">
+            <p class="title" id="title">Cargando...</p>
+            <p class="channel" id="channel">Canal: Cargando...</p>
+        </div>
+    </div>
+
+    <script>
+        // ID del video que estás viendo (esto puede ser dinámico si lo obtienes de alguna forma)
+        const videoId = 'dQw4w9WgXcQ'; // Aquí pones el ID del video de YouTube que deseas mostrar
+
+        const apiKey = 'TU_API_KEY'; // Reemplaza con tu clave de API
+
+        // URL de la API de YouTube
+        const apiUrl = `https://www.googleapis.com/youtube/v3/videos?part=snippet&id=${videoId}&key=${apiKey}`;
+
+        // Función para obtener la información del video
+        async function fetchVideoData() {
+            try {
+                const response = await fetch(apiUrl);
+                const data = await response.json();
+
+                if (data.items && data.items.length > 0) {
+                    const video = data.items[0].snippet;
+                    const title = video.title;
+                    const channel = video.channelTitle;
+                    const thumbnailUrl = video.thumbnails.high.url;
+
+                    // Mostrar la información en el widget
+                    document.getElementById('thumbnail').src = thumbnailUrl;
+                    document.getElementById('title').textContent = title;
+                    document.getElementById('channel').textContent = `Canal: ${channel}`;
+                } else {
+                    console.error('No se encontró el video');
+                }
+            } catch (error) {
+                console.error('Error al obtener los datos del video', error);
+            }
+        }
+
+        // Llamar a la función para obtener los datos
+        fetchVideoData();
+    </script>
+
+</body>
+</html>

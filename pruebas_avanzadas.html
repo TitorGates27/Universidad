@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        div {
+            margin-top: 5vh;
+            text-align: center;
+        }
+        button {
+            --primary: #1DA1F2;
+            --hover: #0d95e8;
+            --active: #0a7ac1;
+
+            font-size: 20px;
+            font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+            padding: 10px 25px;
+            cursor: pointer;
+            border: 2px solid var(--primary);
+            border-radius: 5px;
+            background-color: var(--primary);
+            color: #fff;
+            transition: background-color 200ms ease, transform 120ms ease, box-shadow 200ms ease;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+        }
+
+        button:hover {
+            background-color: var(--hover);
+            color: #fff;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.16);
+        }
+
+        button:active {
+            background-color: var(--active);
+            transform: scale(0.97);
+        }
+        
+        button:focus {
+            outline: 3px solid rgba(29,161,242,0.25);
+            outline-offset: 2px;
+        }
+    </style>
+
+    <div>
+        <button id="ola">Twitter</button>
+    </div>
+
+    <script>
+            const ola = document.getElementById('ola');
+            ola.addEventListener('click', () => {
+                window.open('https://x.com/Titor127', '_blank');
+            });
+    </script>
+
+</body>
+</html>
