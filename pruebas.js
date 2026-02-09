@@ -20,22 +20,3 @@ let persona = {
     }
 };
 persona.saludar();
-
-for (let i = 1; i <= 5; i++) {
-    console.log(`Número: ${i}`);
-}
-let contador = 0;
-while (contador < 3) {
-    console.log(`Contador: ${contador}`);
-    contador++;
-}
-try {
-    let resultado = 10 / 0;
-    if (!isFinite(resultado)) {
-        throw new Error("División por cero no permitida.");
-    }
-    console.log(`Resultado: ${resultado}`);
-} catch (error) {
-    console.error(`Error: ${error.message}`);
-}
-console.log("Pruebas completadas.");
