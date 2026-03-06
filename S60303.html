@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <title>Ejemplo Simple de JS Incrustado</title>
+    <style>
+        .activo {
+            transform: rotate(20160deg);
+            transition: 5s;
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <h2 class="display-2">Ejemplo de JavaScript</h2>
+        <p class="fs-2" id="p1">This text will be replaces with the text in the following JavaScript</p>
+        <p class="fs-2" id="p2">Haz clic aquí para ver una alerta</p>
+        <img src="IMAGENES/TOAD.jpg" id="p3">
+    </main>
+    <script>
+        // document.getElementById("p1").innetHTML="Welcometo the exciting world of JavaScript";
+        let etiqueta = document.getElementById("p1");
+        etiqueta.innerHTML = "Texto agregado con mucha fe";
+
+        let ala = document.getElementById("p2");
+        ala.onclick = function() {
+            alert("¡Hola! Has hecho clic en el párrafo.");
+        };
+
+        let truco = document.getElementById("p3");
+        truco.onwheel = function() {
+            truco.classList.toggle("activo");
+            alert("Me mareoooo");
+        };
+
+
+        // display.onkeydown = function(a) {
+        //     if (a.code == "Enter" || a.code == "NumpadEnter") {
+        //         igualacion();
+        //     }
+        // }
+
+
+    </script>
+</body>
+</html>
